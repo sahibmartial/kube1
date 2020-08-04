@@ -10,7 +10,7 @@ spec:
         - name: mmumshad/simple-webapp-color
           containerPort: 8080
           protocol: TCP
-        
+       
+      env:  
         - name: APP_COLOR
-        
           value: red
