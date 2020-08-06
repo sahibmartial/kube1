@@ -17,4 +17,4 @@ spec: # Ici les spécifications du Deployment
     spec: # Ici les spécifications des Pods
       containers: # un Pod peut contenir plusieurs conteneurs
       - name: web
-        image: nginx:1.18.0
+        image: nginx:1.11.8

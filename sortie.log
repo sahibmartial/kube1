@@ -1,0 +1,68 @@
+Name:                   deployment-example
+Namespace:              default
+CreationTimestamp:      Thu, 06 Aug 2020 09:55:58 +0000
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=nginx
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=nginx
+  Containers:
+   web:
+    Image:        nginx:1.18.0
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   deployment-example-85447d5755 (2/2 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  16m   deployment-controller  Scaled up replica set deployment-example-85447d5755 to 2
+NAME                            DESIRED   CURRENT   READY   AGE
+deployment-example-85447d5755   2         2         2       17m
+Name:                   deployment-example
+Namespace:              default
+CreationTimestamp:      Thu, 06 Aug 2020 09:55:58 +0000
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 2
+Selector:               app=nginx
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=nginx
+  Containers:
+   web:
+    Image:        nginx:1.11.8
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   deployment-example-86bff466fb (2/2 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  21m   deployment-controller  Scaled up replica set deployment-example-85447d5755 to 2
+  Normal  ScalingReplicaSet  101s  deployment-controller  Scaled up replica set deployment-example-86bff466fb to 1
+  Normal  ScalingReplicaSet  87s   deployment-controller  Scaled down replica set deployment-example-85447d5755 to 1
+  Normal  ScalingReplicaSet  87s   deployment-controller  Scaled up replica set deployment-example-86bff466fb to 2
+  Normal  ScalingReplicaSet  83s   deployment-controller  Scaled down replica set deployment-example-85447d5755 to 0
