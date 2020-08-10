@@ -1,0 +1,13 @@
+Name:                     myfirstservice-color
+Namespace:                default
+Labels:                   <none>
+Annotations:              Selector:  app=web
+Type:                     NodePort
+IP:                       10.110.73.246
+Port:                     http  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 http  30008/TCP
+Endpoints:                <none>
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
