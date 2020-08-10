@@ -1,0 +1,8 @@
+Name:         production
+Labels:       <none>
+Annotations:  <none>
+Status:       Active
+
+No resource quota.
+
+No LimitRange resource.
