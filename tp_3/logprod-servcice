@@ -1,0 +1,2 @@
+NAME                   TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+myfirstservice-color   NodePort   10.102.235.90   <none>        8080:30008/TCP   28m
