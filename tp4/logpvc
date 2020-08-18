@@ -1,0 +1,16 @@
+NAME   STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+pvc    Bound    pv       1Gi        RWO                           32s
+Name:          pvc
+Namespace:     default
+StorageClass:  
+Status:        Bound
+Volume:        pv
+Labels:        <none>
+Annotations:   pv.kubernetes.io/bind-completed: yes
+               pv.kubernetes.io/bound-by-controller: yes
+Finalizers:    [kubernetes.io/pvc-protection]
+Capacity:      1Gi
+Access Modes:  RWO
+VolumeMode:    Filesystem
+Mounted By:    <none>
+Events:        <none>

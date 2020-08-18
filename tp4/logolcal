@@ -1,0 +1,56 @@
+Name:         mysql-volume
+Namespace:    default
+Priority:     0
+Node:         node1/10.0.1.3
+Start Time:   Tue, 18 Aug 2020 11:04:07 +0000
+Labels:       <none>
+Annotations:  Status:  Running
+IP:           10.32.0.4
+IPs:
+  IP:  10.32.0.4
+Containers:
+  mysql:
+    Container ID:   docker://1a864954850903c5649941c810cd20cd76157450971542c1e885a0b471546f93
+    Image:          mysql
+    Image ID:       docker-pullable://mysql@sha256:c358e72e100ab493a0304bda35e6f239db2ec8c9bb836d8a427ac34307d074ed
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Tue, 18 Aug 2020 11:04:15 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      MYSQL_ROOT_PASSWORD:  password
+      MYSQL_DATABASE:       sahib-kube
+      MYSQL_USER:           easy
+      MYSQL_PASSWORD:       easy
+    Mounts:
+      /var/lib/mysql from mysql-data (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-j479s (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  mysql-data:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:     
+    SizeLimit:  <unset>
+  default-token-j479s:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-j479s
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  54s   default-scheduler  Successfully assigned default/mysql-volume to node1
+  Normal  Pulling    53s   kubelet, node1     Pulling image "mysql"
+  Normal  Pulled     51s   kubelet, node1     Successfully pulled image "mysql"
+  Normal  Created    46s   kubelet, node1     Created container mysql
+  Normal  Started    46s   kubelet, node1     Started container mysql

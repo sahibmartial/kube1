@@ -1,0 +1,58 @@
+Name:         mysql-pv
+Namespace:    default
+Priority:     0
+Node:         node1/10.0.1.3
+Start Time:   Tue, 18 Aug 2020 10:47:11 +0000
+Labels:       <none>
+Annotations:  Status:  Running
+IP:           10.32.0.4
+IPs:
+  IP:  10.32.0.4
+Containers:
+  mysql:
+    Container ID:   docker://66b2d03e8cd33eb4f62bc87fedd1ce8427a59d307d4d08ca3124151189805df9
+    Image:          mysql
+    Image ID:       docker-pullable://mysql@sha256:c358e72e100ab493a0304bda35e6f239db2ec8c9bb836d8a427ac34307d074ed
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Tue, 18 Aug 2020 10:47:49 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      MYSQL_ROOT_PASSWORD:  password
+      MYSQL_DATABASE:       sahib-kube
+      MYSQL_USER:           easy
+      MYSQL_PASSWORD:       easy
+    Mounts:
+      /var/lib/mysql from mysql-data (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-j479s (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  mysql-data:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  pvc
+    ReadOnly:   false
+  default-token-j479s:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-j479s
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  2m53s  default-scheduler  Successfully assigned default/mysql-pv to node1
+  Normal  Pulling    2m52s  kubelet, node1     Pulling image "mysql"
+  Normal  Pulled     2m24s  kubelet, node1     Successfully pulled image "mysql"
+  Normal  Created    2m15s  kubelet, node1     Created container mysql
+  Normal  Started    2m15s  kubelet, node1     Started container mysql
+NAME       READY   STATUS    RESTARTS   AGE
+mysql-pv   1/1     Running   0          3m7s

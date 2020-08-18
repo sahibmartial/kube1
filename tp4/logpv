@@ -1,0 +1,37 @@
+Name:            pv
+Labels:          type=local
+Annotations:     Finalizers:  [kubernetes.io/pv-protection]
+StorageClass:    
+Status:          Available
+Claim:           
+Reclaim Policy:  Retain
+Access Modes:    RWO
+VolumeMode:      Filesystem
+Capacity:        1Gi
+Node Affinity:   <none>
+Message:         
+Source:
+    Type:          HostPath (bare host directory volume)
+    Path:          /data-pv
+    HostPathType:  
+Events:            <none>
+NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+pv     1Gi        RWO            Retain           Available                                   2m12s
+Name:            pv
+Labels:          type=local
+Annotations:     pv.kubernetes.io/bound-by-controller: yes
+Finalizers:      [kubernetes.io/pv-protection]
+StorageClass:    
+Status:          Bound
+Claim:           default/pvc
+Reclaim Policy:  Retain
+Access Modes:    RWO
+VolumeMode:      Filesystem
+Capacity:        1Gi
+Node Affinity:   <none>
+Message:         
+Source:
+    Type:          HostPath (bare host directory volume)
+    Path:          /data-pv
+    HostPathType:  
+Events:            <none>
