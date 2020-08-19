@@ -1,0 +1,5 @@
+1)il faut d'abo rdisntaller hlem ens iuavnt le tuto de diarne sur sonr url :
+https://github.com/diranetafen/supinfo-kubernetes/tree/minikube/tp07
+2)download la chart helm stable/wordpress , se deplacer ds le repo ensuiter ajouetr son fichier value  ,pui execute rcetetc ommande:
+=>
+helm isntall stable/wordpress --name wordpress -f value.yml 
